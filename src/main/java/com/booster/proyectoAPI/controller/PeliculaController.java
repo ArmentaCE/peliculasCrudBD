@@ -1,5 +1,6 @@
 package com.booster.proyectoAPI.controller;
 
+import com.booster.proyectoAPI.Entidades.DTO.PeliculaDTO;
 import com.booster.proyectoAPI.Entidades.Pelicula;
 import com.booster.proyectoAPI.Services.IPeliculaService;
 import com.booster.proyectoAPI.Services.PeliculaService;
@@ -31,4 +32,15 @@ public class PeliculaController {
     public Pelicula insertPelicula(@RequestBody Pelicula pelicula){
         return PeliculaService.insertPelicula(pelicula);
     }
+
+    @DeleteMapping("/pelicula/{id}")
+    public PeliculaDTO deletePelicula(@PathVariable Long id){
+        return PeliculaService.deletePelicula(id);
+    }
+
+    @PutMapping("/pelicula")
+    public PeliculaDTO updatePelicula(@RequestBody PeliculaDTO peliculaDTO){
+        return PeliculaService.updatePelicula(peliculaDTO);
+    }
+
 }

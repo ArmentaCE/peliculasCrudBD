@@ -1,9 +1,13 @@
 package com.booster.proyectoAPI.Entidades;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "peliculas")
+@Getter
+@Setter
 public class Pelicula {
 
     //ATRIBUTOS
@@ -27,38 +31,6 @@ public class Pelicula {
         Genero = genero;
     }
 
-    //GETTERS AND SETTERS
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
-
-    public int getDuracion() {
-        return Duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        Duracion = duracion;
-    }
-
-    public String getGenero() {
-        return Genero;
-    }
-
-    public void setGenero(String genero) {
-        Genero = genero;
-    }
 
     //TO STRING
     @Override
