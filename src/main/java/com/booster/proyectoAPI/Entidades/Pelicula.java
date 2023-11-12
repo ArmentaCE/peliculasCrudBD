@@ -1,21 +1,24 @@
 package com.booster.proyectoAPI.Entidades;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "peliculas")
-@Getter
-@Setter
 public class Pelicula {
 
     //ATRIBUTOS
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+    @NotNull(message = "Name can't be null")
+    @NotEmpty(message = "Name can't be empty")
     private String Nombre;
+
     private int Duracion;
+    @NotNull( message = "Gender can't be null")
+    @NotEmpty(message = "Gender can't be empty")
     private String Genero;
 
     //CONSTRUCTOR
@@ -31,6 +34,37 @@ public class Pelicula {
         Genero = genero;
     }
 
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public int getDuracion() {
+        return Duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        Duracion = duracion;
+    }
+
+    public String getGenero() {
+        return Genero;
+    }
+
+    public void setGenero(String genero) {
+        Genero = genero;
+    }
 
     //TO STRING
     @Override

@@ -2,12 +2,14 @@ package com.booster.proyectoAPI.Services;
 
 import com.booster.proyectoAPI.Entidades.DTO.PeliculaDTO;
 import com.booster.proyectoAPI.Entidades.Pelicula;
-import org.apache.juli.logging.Log;
+//import com.booster.proyectoAPI.Exceptions.NotFoundExceptionPersonal;
 
 import java.util.List;
 
 public interface IPeliculaService {
     List<Pelicula> getPeliculas();
+
+    //Pelicula getPeliculaById(Long id) throws NotFoundExcepcionPersonalizada;
 
     Pelicula getPeliculaById(Long id);
 
